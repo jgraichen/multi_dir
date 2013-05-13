@@ -93,7 +93,7 @@ MultiDir::Paths.define :tmp, :uploads
 This allows you to use `uploads` as a top level path that will be placed in `tmp` if not configured otherwise:
 
 ```ruby
-MultiDir.uploads.join 'abrng.pdf' # => "/media/uploads/abrng.pdf"
+MultiDir.uploads.join 'abrng.pdf' # => "/tmp/uploads/abrng.pdf"
 ```
 
 *More features will follow.*
