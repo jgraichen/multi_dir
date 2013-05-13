@@ -4,7 +4,7 @@
 way. This allows administrators to define real paths in one global
 standardized way.
 
-No more `Rails.root.join *%w(tmp uploaded) anymore. Give administrators the
+No more `Rails.root.join *%w(tmp uploaded)` anymore. Give administrators the
 freedom to link the temp directory to `/tmp/myapp` or any other system
 specific place by just using `MultiDir.tmp.join 'uploaded'`.
 
@@ -48,7 +48,7 @@ specify which content should live where without manual patching every piece of
 code.
 
 Create or edit `dirs.yml` in the application root directory (or whereever
-you're running the app) or specific the path using MULTI_DIR_CONFIG env
+you're running the app) or specific the path using `MULTI_DIR_CONFIG` env
 variable with the following content:
 
 ```yaml
