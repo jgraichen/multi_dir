@@ -1,4 +1,3 @@
-require 'active_support/core_ext/kernel/singleton_class'
 require 'active_support/core_ext/hash/keys'
 
 require 'multi_dir/version'
