@@ -52,7 +52,7 @@ you're running the app) or specific the path using `MULTI_DIR_CONFIG` env
 variable with the following content:
 
 ```yaml
-multi_dir:
+paths:
   tmp: /tmp/myapp-srv2
   files: /mnt/nfs2/storage
   cache: /var/cache/apps/myapp
@@ -76,7 +76,7 @@ See the following examples:
 MultiDir.cache.join *%(pdfgen page5.pdf) # => "cache/pdfgen/page5.pdf"
 
 # Request a file with a temporary name
-MultiDir.tmp.temp ['basename', '.jpg'] # => "tmp/basename74hf4727f834.jpg"
+MultiDir.tmp.temp_file ['basename', '.jpg'] # => "tmp/basename74hf4727f834.jpg"
 
 # Get list of files in a additional configurable directory
 MultiDir.cache[:uploads].glob '**/*.zip' # This allows admins to configure a special path for :uploads
