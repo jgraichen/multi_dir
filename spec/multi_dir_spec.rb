@@ -47,4 +47,8 @@ describe MultiDir do
         File.expand_path('spec/support/multi_dir.yml')
     ]
   end
+
+  it 'should allow to join path' do
+    expect(MultiDir.root.join('app', 'controllers').to_s).to be == '/usr/lib/myapp/app/controllers'
+  end
 end

@@ -3,7 +3,7 @@ module MultiDir
   # Provide additional function to operate
   # on directories.
   #
-  class Path < Pathname
+  module PathnamePatch
 
     def glob(pattern)
       Dir.glob File.join(to_s, pattern)
@@ -17,4 +17,6 @@ module MultiDir
       join path.to_s
     end
   end
+
+  ::Pathname.send :include, PathnamePatch
 end
