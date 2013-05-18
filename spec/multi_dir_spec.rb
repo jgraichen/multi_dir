@@ -42,9 +42,9 @@ describe MultiDir do
   end
 
   it 'should allow to glob path' do
-    expect(MultiDir[:spec_support2].glob('*.yml')).to be == [
-        File.expand_path('spec/support/multi_dir_2.yml'),
-        File.expand_path('spec/support/multi_dir.yml')
+    expect(MultiDir[:spec_support2].glob('*.yml').sort).to be == [
+        File.expand_path('spec/support/multi_dir.yml'),
+        File.expand_path('spec/support/multi_dir_2.yml')
     ]
   end
 
