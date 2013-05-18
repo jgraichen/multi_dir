@@ -29,7 +29,7 @@ describe MultiDir do
   end
 
   it 'should resolve custom path' do
-    MultiDir::Paths.define :uploads, in: :files
+    MultiDir::Paths.define :uploads, :in => :files
     expect(MultiDir.uploads.to_s).to be == '/mnt/nfs/storage0/files'
   end
 
@@ -42,10 +42,9 @@ describe MultiDir do
   end
 
   it 'should allow to glob path' do
-    puts MultiDir.spec_support2
-    expect(MultiDir.spec_support2.glob '*.yml').to be == [
-        File.absolute_path('spec/support/multi_dir_2.yml'),
-        File.absolute_path('spec/support/multi_dir.yml')
+    expect(MultiDir.spec_support2.glob('*.yml')).to be == [
+        File.expand_path('spec/support/multi_dir_2.yml'),
+        File.expand_path('spec/support/multi_dir.yml')
     ]
   end
 end

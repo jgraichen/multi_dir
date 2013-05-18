@@ -16,6 +16,7 @@ describe MultiDir::Paths do
 
   describe '#load_yaml' do
     let(:cfg) { paths.load_yaml 'spec/support/multi_dir.yml' }
+
     it 'should load configuration from YAML file' do
       expect(cfg).to include(:root, :bin, :cache, :config, :tmp, :files, :uploads)
     end
@@ -34,7 +35,7 @@ describe MultiDir::Paths do
   end
 
   describe '#resolve' do
-    let(:config) { { root: '/root', tmp: [:root, 'tmp'] } }
+    let(:config) { { :root => '/root', :tmp => [:root, 'tmp'] } }
 
     it 'should resolve direct path symbol' do
       expect(paths.resolve :root).to be == '/root'
@@ -53,7 +54,7 @@ describe MultiDir::Paths do
 
   describe '#resovle_root' do
     context 'with configure root path' do
-      let(:config) { { root: '/var/app/root'} }
+      let(:config) { { :root => '/var/app/root' } }
 
       it 'should resolve to configured root path' do
         expect(paths.resolve_root).to be == '/var/app/root'
