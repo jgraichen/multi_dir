@@ -66,7 +66,6 @@ describe MultiDir::Paths do
       after  { Object.send :remove_const, :Rails }
 
       it 'should resolve to Rails root' do
-        puts Rails.root
         expect(paths.resolve_root).to be == 'app'
       end
     end
