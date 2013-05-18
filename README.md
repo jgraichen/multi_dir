@@ -1,5 +1,6 @@
 # MultiDir
 
+[![Gem Version](https://badge.fury.io/rb/multi_dir.png)](http://badge.fury.io/rb/multi_dir)
 [![Build Status](https://travis-ci.org/jgraichen/multi_dir.png?branch=master)](https://travis-ci.org/jgraichen/multi_dir)
 
 **MultiDir** allow libraries and frameworks to request paths in a semantic
