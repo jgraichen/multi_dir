@@ -21,7 +21,7 @@ module MultiDir
 
           path = paths[symbol]
           if path.is_a? Array
-            File.join resolve(path[0]), path[1]
+            File.join resolve(path[0]), path[1].to_s
           else
             path.to_s
           end
@@ -53,12 +53,12 @@ module MultiDir
 
     def default_paths
       {
-          bin: [ :root, 'bin' ],
-          lib: [ :root, 'lib' ],
-          tmp: [ :root, 'tmp' ],
-          cache: [ :tmp, 'cache' ],
-          config: [ :root, 'config' ],
-          files: [ :root, 'files' ]
+          :bin    => [:root, 'bin'],
+          :lib    => [:root, 'lib'],
+          :tmp    => [:root, 'tmp'],
+          :cache  => [:tmp, 'cache'],
+          :config => [:root, 'config'],
+          :files  => [:root, 'files']
       }
     end
 
@@ -72,9 +72,9 @@ module MultiDir
       end
 
       data[:paths].inject({}) do |memo, row|
-        key, path = row
-        memo[key.to_sym] = if %w(/ .).include? path.to_s[0]
-          File.absolute_path path.to_s
+        key, path = row[0].to_sym, row[1].to_s
+        memo[key] = if %w(/ .).include? path[0].chr
+          File.expand_path path.to_s
         else
           [ :root, path.to_s ]
         end
