@@ -1,8 +1,9 @@
-require 'multi_dir'
 require 'coveralls'
 Coveralls.wear! do
   add_filter 'spec'
 end
+
+require 'multi_dir'
 
 Dir[File.expand_path('spec/support/**/*.rb')].each {|f| require f}
 
