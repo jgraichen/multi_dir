@@ -17,7 +17,7 @@ module MultiDir
         when :root
           resolve_root
         else
-          raise ArgumentError.new "Path symbol `#{symbol}` does not exist." unless paths.has_key? symbol
+          raise ArgumentError.new "Path symbol `#{symbol.inspect}` does not exist." unless paths.has_key? symbol
 
           path = paths[symbol]
           if path.is_a? Array
@@ -96,6 +96,8 @@ module MultiDir
 
       parent = options[:id] || options[:parent]
       paths[name] = [ parent, name.to_s ]
+
+      MultiDir.define_path_method name
     end
 
     class << self
