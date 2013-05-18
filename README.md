@@ -2,6 +2,9 @@
 
 [![Gem Version](https://badge.fury.io/rb/multi_dir.png)](http://badge.fury.io/rb/multi_dir)
 [![Build Status](https://travis-ci.org/jgraichen/multi_dir.png?branch=master)](https://travis-ci.org/jgraichen/multi_dir)
+[![Coverage Status](https://coveralls.io/repos/jgraichen/multi_dir/badge.png?branch=master)](https://coveralls.io/r/jgraichen/multi_dir?branch=master)
+[![Code Climate](https://codeclimate.com/github/jgraichen/multi_dir.png)](https://codeclimate.com/github/jgraichen/multi_dir)
+[![Dependency Status](https://gemnasium.com/jgraichen/multi_dir.png)](https://gemnasium.com/jgraichen/multi_dir)
 
 **MultiDir** allow libraries and frameworks to request paths in a semantic
 way. This allows administrators to define real paths in one global
