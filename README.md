@@ -1,5 +1,7 @@
 # MultiDir
 
+[![Build Status](https://travis-ci.org/jgraichen/multi_dir.png?branch=master)](https://travis-ci.org/jgraichen/multi_dir)
+
 **MultiDir** allow libraries and frameworks to request paths in a semantic
 way. This allows administrators to define real paths in one global
 standardized way.
