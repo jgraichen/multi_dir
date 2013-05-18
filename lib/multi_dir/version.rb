@@ -6,6 +6,6 @@ module MultiDir
     STAGE = nil
     STRING = [MAJOR, MINOR, PATCH, STAGE].reject(&:nil?).join('.')
 
-    def to_s; STRING end
+    def self.to_s; STRING end
   end
 end

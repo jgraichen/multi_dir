@@ -87,7 +87,7 @@ MultiDir.cache[:uploads].glob '**/*.zip' # This allows admins to configure a spe
 You can even define your own new top level *semantic path*:
 
 ```ruby
-MultiDir::Paths.define :tmp, :uploads
+MultiDir::Paths.define :uploads, in: :tmp
 ```
 
 This allows you to use `uploads` as a top level path that will be placed in `tmp` if not configured otherwise:

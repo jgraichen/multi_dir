@@ -1,0 +1,10 @@
+paths:
+  root: /usr/lib/myapp
+  bin: /usr/bin
+  tmp: /tmp/myapp
+  cache: /var/cache/myapp
+  config: /etc/myapp
+  files: /var/files/myapp
+  uploads: /mnt/nfs/storage0/files
+  spec_support: spec/support
+  spec_support2: ./spec/support
