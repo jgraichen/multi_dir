@@ -1,5 +1,3 @@
-require 'tmpdir'
-
 module MultiDir
 
   # Provide additional function to operate
@@ -20,7 +18,23 @@ module MultiDir
     end
 
     def tempname(prefix_suffix, n = nil)
-      join ::Dir::Tmpname.make_tmpname prefix_suffix, n
+      join mktmpname prefix_suffix, n
+    end
+
+    private
+    def mktmpname(prefix_suffix, n = nil)
+      case prefix_suffix
+        when Array
+          prefix = prefix_suffix[0].to_s
+          suffix = prefix_suffix[1].to_s
+        else
+          prefix = prefix_suffix.to_s
+      end
+      t = Time.now.strftime("%Y%m%d")
+      path = "#{prefix}#{t}-#{$$}-#{rand(0x100000000).to_s(36)}"
+      path << "-#{n}" if n
+      path << suffix  if suffix
+      path
     end
   end
 
