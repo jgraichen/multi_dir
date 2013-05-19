@@ -14,7 +14,7 @@ No more `Rails.root.join *%w(tmp uploaded)` anymore. Give administrators the
 freedom to link the temp directory to `/tmp/myapp` or any other system
 specific place by just using `MultiDir.tmp.join 'uploaded'`.
 
-*Note: MultiDir as a library is still under development but the concept sounds nice.*
+*Note:* ***MultiDir*** *as a library is still under development but the concept sounds nice.*
 
 ## Installation
 
@@ -34,7 +34,7 @@ Or install it yourself as:
 
 ### For All
 
-MultiDir allows to define any semantic path your app, library or framework may
+**MultiDir** allows to define any semantic path your app, library or framework may
 need. By default the following paths are specified:
 
 ```
