@@ -1,3 +1,5 @@
+require 'tmpdir'
+
 module MultiDir
 
   # Provide additional function to operate
@@ -15,6 +17,10 @@ module MultiDir
       end
 
       join path.to_s
+    end
+
+    def tempname(prefix_suffix, n = nil)
+      join ::Dir::Tmpname.make_tmpname prefix_suffix, n
     end
   end
 

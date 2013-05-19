@@ -17,11 +17,17 @@ describe MultiDir::PathnamePatch do
     end
   end
 
-  describe 'glob' do
+  describe '#glob' do
     it 'should glob directory with joined pattern' do
       Dir.should_receive(:glob).with('/tmp/myapp/path/**/*.rb').and_return(%w(a.rb b.rb))
 
       expect( MultiDir.tmp.glob 'path', '**', '*.rb' ).to be == %w(a.rb b.rb)
+    end
+  end
+
+  describe '#tempname' do
+    it 'should create temp name on path' do
+      expect( MultiDir.tmp.tempname(%w(abc .jpg)).to_s ).to be =~ /\A\/tmp\/myapp\/abc\d+-\d+-\w+\.jpg\z/
     end
   end
 end

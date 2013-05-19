@@ -82,7 +82,7 @@ See the following examples:
 MultiDir.cache.join *%(pdfgen page5.pdf) # => "cache/pdfgen/page5.pdf"
 
 # Request a file with a temporary name
-MultiDir.tmp.temp_file ['basename', '.jpg'] # => "tmp/basename74hf4727f834.jpg"
+MultiDir.tmp.tempname ['basename', '.jpg'] # => "tmp/basename20130519-11982-tzda0r.jpg"
 
 # Get list of files in a additional configurable directory
 MultiDir.cache[:uploads].glob 'path/**', '*.zip' # This allows admins to
