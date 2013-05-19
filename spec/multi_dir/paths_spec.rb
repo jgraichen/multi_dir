@@ -52,7 +52,7 @@ describe MultiDir::Paths do
     end
   end
 
-  describe '#resovle_root' do
+  describe '#resolve_root' do
     context 'with configure root path' do
       let(:config) { { :root => '/var/app/root' } }
 
