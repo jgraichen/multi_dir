@@ -5,8 +5,8 @@ module MultiDir
   #
   module PathnamePatch
 
-    def glob(pattern)
-      Dir.glob File.join(to_s, pattern)
+    def glob(*patterns)
+      Dir.glob File.join(to_s, *patterns)
     end
 
     def [](path)

@@ -85,9 +85,10 @@ MultiDir.cache.join *%(pdfgen page5.pdf) # => "cache/pdfgen/page5.pdf"
 MultiDir.tmp.temp_file ['basename', '.jpg'] # => "tmp/basename74hf4727f834.jpg"
 
 # Get list of files in a additional configurable directory
-MultiDir.cache[:uploads].glob '**/*.zip' # This allows admins to configure a special path for :uploads
-                                         # that if not given will be placed in 'cache'.
-                                         # => ["/media/uploads/a/virus.zip", "/media/uploads/attachments/ppt.zip"]
+MultiDir.cache[:uploads].glob 'path/**', '*.zip' # This allows admins to
+            # configure a special path for :uploads
+            # that if not given will be placed in 'cache'.
+            # => ["/media/uploads/a/virus.zip", "/media/uploads/attachments/ppt.zip"]
 ```
 
 You can even define your own new top level *semantic path*:
